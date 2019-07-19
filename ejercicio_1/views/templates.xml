@@ -1,0 +1,5 @@
+<odoo>
+    <data>
+       <template id="ads_txt"><t t-esc="param1"/></template>
+    </data>
+</odoo>

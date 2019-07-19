@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="google_ads_txt" model="ir.config_parameter">
+            <field name="key">google.ads.txt</field>
+            <field name="value">google.com, pub-0769857654247190, DIRECT, f08c47fec0942fa0</field>
+        </record>
+    </data>
+</odoo>
