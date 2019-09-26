@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6 Eventos Jquery</title>
+    <!--
+    * click
+    * hover
+    * focus
+    * blur
+    -->
+    <style>
+        body{
+            font-family: Arial;
+        }
+    </style>
+    <script src="lib/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#main").css(
+                {
+                    'background-color': 'lightblue',
+                    'margin': '20px',
+                    'padding': '10px',
+                    'width': '400px',
+                    'height': '400px',});
+
+
+            // click modo  1
+            /*$("button").click(function (evt) {
+                var text_email = $("input[name='email']").val()
+                alert(text_email)
+            })*/
+
+            //click modo 2
+            $("button").on("click", function () {
+                var text_email = $("input[name='email']").val()
+                alert(text_email)
+            })
+
+            // hover
+            $("input[name='email']").hover(function () {
+                $(this).css("border", "1px solid green")
+            }, function () {
+                $(this).css("border", "1px solid red")
+            })
+
+            //focus
+            $("input[name='passwd']").focus(function () {
+                console.log("Estas sobre el input de contraseña")
+            })
+
+            //blur
+            $("input[name='passwd']").blur(function () {
+                console.log("Estas fuera del input de contraseña")
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="main">
+        <h3>JQuery Events</h3>
+        <form id="form1">
+            <input name="email" placeholder="demo@gmail.com"><br/>
+            <input name="passwd" type="password"><br/>
+
+            <button name="ok">Aceptar</button>
+        </form>
+    </div>
+</body>
+</html>
