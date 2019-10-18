@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 7 Deferred Jquery</title>
+    <!--
+    * Deferred Promise()
+    * Deferred States:
+    *    + resolve()
+    *    + pending()
+    *    + reject()
+    * Done(exito).fail(error)
+    * Then(exito, error)
+    * When(tarea1, tarea2, tarea-n).then(...)
+    -->
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        #main {
+            background-color: #cce5ff;
+            margin: 20px;
+            padding: 10px;
+            width: 400px;
+            height: 100px
+        }
+    </style>
+    <!--Bootstrap lib-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="lib/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+        var tarea1 = function(){
+          var ok = $.Deferred();
+          setTimeout(function () {
+              console.log("Tarea 1 realizada");
+              ok.resolve("Ok satisfactorio T1")
+          }, 3000);
+
+          return ok;
+        };
+
+        var tarea2 = function(){
+          var ok = $.Deferred();
+          setTimeout(function () {
+              console.log("Tarea 2 realizada");
+              ok.resolve("Ok satisfactorio T2")
+          }, 2000);
+
+          return ok;
+        };
+
+        $(function () {
+            console.log("JQuery ready...");
+
+            $(".bt1").on("click", function () {
+                $.when(tarea1(), tarea2()).then(function (tarea1, tarea2) {
+                    console.log(tarea1, " -- ", tarea2);
+                })
+            });
+
+            $(".bt2").on("click", function () {
+                console.log($(this).text());
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="main">
+    <h3>JQuery Deferred (JS Async.)</h3>
+    <button class="btn btn-success bt1">Click now!</button>
+    <button class="btn btn-warning bt2">Button 2!</button>
+</div>
+</body>
+</html>
