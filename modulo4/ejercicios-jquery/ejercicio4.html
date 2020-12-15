@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4 Find</title>
+    <!--
+    Find
+    -->
+    <script src="lib/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#main").css(
+                {
+                    'background-color': 'lightblue',
+                    'width': '400px',
+                    'height': '400px',});
+
+            $("#main").find("li:odd").css("color", "red");
+
+        })
+    </script>
+</head>
+<body>
+    <div id="main">
+        <h3>Modelos Odoo</h3>
+        <ul>
+            <li>res.partner</li>
+            <li>product.product</li>
+            <li>sale.order</li>
+        </ul>
+    </div>
+</body>
+</html>

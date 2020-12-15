@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+    <!--
+    Selectors Jquery
+    Por id (#)
+    por Classes (.)
+    Attributes
+    Find
+    -->
+    <script src="lib/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#main").css(
+                {
+                    'background-color': 'lightblue',
+                    'width': '400px',
+                    'height': '400px',
+                })
+            $("[class='elem1']").text("Cambiando el texto con Jquery")
+            $("[data-id]").text("Cambiando el texto con Jquery")
+        })
+    </script>
+</head>
+<body>
+    <div id="main">
+        <p class="elem1">Selector por id</p>
+        <p class="elem2">Selector por id 2</p>
+        <p data-id="123">Data id 123</p>
+    </div>
+</body>
+</html>

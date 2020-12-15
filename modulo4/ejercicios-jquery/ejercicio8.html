@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8 Deferred Jquery</title>
+    <!--
+    * Promise
+    * Then
+    * Done
+    * When
+    -->
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        #main {
+            background-color: #cce5ff;
+            margin: 20px;
+            padding: 10px;
+            width: 400px;
+            height: 100px
+        }
+    </style>
+    <!--Bootstrap lib-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="lib/jquery-3.4.1.min.js"></script>
+
+    <script>
+        var ejecutar = function () {
+            var dfd = $.Deferred().resolve();
+            for (let i = 0; i < 1000; i++) {
+                dfd = dfd.then(function () {
+                    console.log(i);
+                });
+            }
+            return dfd;
+        };
+        $(function () {
+            console.log("JQuery ready...");
+            $(".bt1").click(function (e) {
+                return ejecutar().then(function (val) {
+                    console.log(" finalizado BTN 1 ", val)
+                });
+            });
+            $(".bt2").click(function (e) {
+                console.log(" BOTON 2 CLICK <<<<<<<<<<<<<<<<")
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="main">
+    <h3>JQuery Deferred (JS Async.)</h3>
+    <button class="bt1">Test</button>
+    <button class="bt2">Ok more</button>
+</div>
+</body>
+</html>

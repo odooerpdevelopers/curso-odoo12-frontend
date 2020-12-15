@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6 Eventos Jquery</title>
+    <!--
+    * click
+    * focus
+    * blur
+    * hover
+    -->
+    <style>
+        body {
+            font-family: Arial;
+        }
+        #main {
+            background-color: lightblue;
+            margin: 20px;
+            padding: 10px;
+            width: 400px;
+            height: 400px;
+        }
+        .second {
+            background-color: steelblue;
+            margin: 20px;
+            padding: 10px;
+            width: 400px;
+            height: 100px
+        }
+        span {
+            display: none;
+        }
+    </style>
+    <script src="lib/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(function () {
+
+            // click modo  1
+           /* $("#btn1").click(function (evt) {
+                var text_email = $("input[name='email']").val()
+                //alert(text_email);
+                alert($(this).text());
+            });*/
+
+            //click modo 2
+            $("button").on("click", function () {
+                var text_email = $("input[name='email']").val();
+                if (text_email) {
+
+                    alert(text_email)
+                } else {
+                    alert("Ingrese un Email válido")
+                }
+            });
+
+            //focus
+            $("input[name='passwd']").focus(function () {
+                $("span.focus").css({'display': 'inline'}).fadeOut(2000)
+            });
+
+            //blur
+            $("input[name='passwd']").blur(function () {
+                $("span.blur").css({'display': 'inline'}).fadeOut(2000)
+            });
+
+             // hover
+            $(".second").hover(function () {
+                $(this).css("background-color", "lightgreen")
+            }, function () {
+                $(this).css("background-color", "steelblue")
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="main">
+    <h3>JQuery Events</h3>
+    <form id="form1">
+        <input name="email" placeholder="demo@gmail.com">
+        <br/><br/>
+        <input name="passwd" type="password" placeholder="passwd">
+        <span class="focus">Has ganado el Foco!</span>
+        <span class="blur">Has perdido el Foco!</span>
+        <br/><br/>
+
+        <button id="btn1" name="ok">Aceptar</button>
+    </form>
+</div>
+<div class="second">
+    <h3>Bloque 2 (Blur Jquery)</h3>
+</div>
+</body>
+</html>

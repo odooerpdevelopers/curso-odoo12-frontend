@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5 Jquery</title>
+    <!--
+    * Modificar CSS .css()
+    * Modificar Texto .text()
+    * Atributos .attr()
+    -->
+    <style>
+        body{
+            font-family: Arial;
+        }
+    </style>
+    <script src="lib/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#main").css(
+                {
+                    'background-color': 'lightblue',
+                    'width': '400px',
+                    'height': '400px',});
+
+            // Ejemplo CSS y Text
+            $("#main").find("li[active='true']").css({
+                "color": "blue",
+                "font-weight": "bold",
+            }).text("Otro texto");
+
+            // Ejemplo Text()
+            var li = $("#main").find("li[active='true']").text();
+            console.log(li);
+
+            // Ejemplo Attr
+            var attribute = $("#main").find("li[active='true']").attr("active");
+            console.log(attribute);
+
+            $("#main").find("li[active='true']").attr("active", false);
+            var attribute = $("#main").find("li[active='false']").attr("active");
+            console.log(attribute);
+
+        })
+    </script>
+</head>
+<body>
+    <div id="main">
+        <h3>Modelos Odoo</h3>
+        <ul>
+            <li active=true>res.partner</li>
+            <li>product.product</li>
+            <li>sale.order</li>
+            <li>account.invoice</li>
+        </ul>
+    </div>
+</body>
+</html>
