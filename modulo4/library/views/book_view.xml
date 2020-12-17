@@ -9,9 +9,9 @@
             <form string="Form Book">
                 <sheet>
                     <group>
-                            <widget name="book_widget"/>
-                        </group>
-                    <field name="image" widget="image"/>
+                        <widget name="book_widget"/>
+                    </group>
+                    <field name="image" widget="image" class="oe_avatar"/>
                     <group>
                         <field name="name"/>
                         <field name="active"/>
@@ -23,6 +23,11 @@
                         <field name="description"/>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
             </form>
         </field>
     </record>

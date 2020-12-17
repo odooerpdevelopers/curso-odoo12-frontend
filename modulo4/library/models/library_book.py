@@ -5,6 +5,7 @@ from odoo import models, fields, api, exceptions
 
 class LibraryBook(models.Model):
     _name = "library.book"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Name")
     active = fields.Boolean("Is active", default=True)

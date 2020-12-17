@@ -21,11 +21,17 @@ odoo.define("library.modulo4", function (require) {
             var self = this;
             console.log("start widget ...");
             this.$el.click(function (evt) {
-                self.displayNotification({
+                // send notification
+                /**self.displayNotification({
                     title: "Curso Odoo 13 Frontend",
                     message: "Hello from a Widget!",
                     type: 'info',
                     sticky: true,
+                });**/
+                // send action url
+                return self.do_action({
+                    type: 'ir.actions.act_url',
+                    url: "/shop/category/cursos-1",
                 });
             })
             return this._super.apply(this, arguments)
