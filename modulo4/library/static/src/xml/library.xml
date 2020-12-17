@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template>
+
+    <t t-name="library.books">
+        <div class="library_widget">
+            <i class="fa fa-shopping-cart fa-2x"></i>
+        </div>
+    </t>
+
+</template>

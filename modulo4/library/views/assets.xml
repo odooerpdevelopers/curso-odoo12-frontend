@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="assets_backend" name="Assets backend for Library" inherit_id="web.assets_backend">
-        <xpath expr="//script[last()]" position="after">
+        <xpath expr="." position="inside">
             <script type="text/javascript" src="/library/static/src/js/library.js"/>
             <script type="text/javascript" src="/library/static/src/js/classes.js"/>
+            <link rel="stylesheet" type="text/scss" href="/library/static/src/scss/widget.scss"/>
         </xpath>
     </template>
 </odoo>
