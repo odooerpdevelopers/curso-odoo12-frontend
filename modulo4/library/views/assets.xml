@@ -3,7 +3,7 @@
     <template id="assets_backend" name="Assets backend for Library" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/library/static/src/js/library.js"/>
-            <script type="text/javascript" src="/library/static/src/js/classes.js"/>
+            <script type="text/javascript" src="/library/static/src/js/clases_widget.js"/>
             <link rel="stylesheet" type="text/scss" href="/library/static/src/scss/widget.scss"/>
         </xpath>
     </template>

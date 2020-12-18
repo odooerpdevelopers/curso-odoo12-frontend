@@ -29,7 +29,7 @@ class LibraryBook(models.Model):
                 "Pages must be > 0!!!"
             )
 
-    def dame_dato(self):
+    def dame_dato(self, fields=None):
         hi = ""
         hi2 = "5"
         return {'books': [1, 2, 3, 4]}

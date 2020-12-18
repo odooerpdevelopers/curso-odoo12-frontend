@@ -13,7 +13,11 @@
                     </group>
                     <field name="image" widget="image" class="oe_avatar"/>
                     <group>
-                        <field name="name"/>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="name"/>
+                            </h2>
+                        </div>
                         <field name="active"/>
                         <field name="pages"/>
                         <field name="isbn"/>
