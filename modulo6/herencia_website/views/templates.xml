@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_sale_product_description_2" inherit_id="website_sale.product" priority="4">
+        <xpath expr="//div[@id='product_full_description']" position="after">
+            <section class="container">
+                <div class="row">
+                    <div itemprop="description_2"
+                         t-field="product.description_2" class="oe_structure oe_empty mt16" id="product_description_2"/>
+                </div>
+            </section>
+
+        </xpath>
+    </template>
+</odoo>
