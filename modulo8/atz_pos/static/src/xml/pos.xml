@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="ClientDetails">
+        <t t-jquery=".client-details-left" t-operation="append">
+            <div class='client-detail'>
+
+                <span class='label'>Caducidad Carnet:</span>
+                <t t-if='partner.caducidad'>
+                    <t t-set='fecha_actual' t-value='new Date().getTime()'/>
+                    <t t-set='caducidad' t-value='new Date(partner.caducidad)'/>
+                    <t t-set="caducado" t-value="caducidad &lt; fecha_actual"/>
+
+
+                    <span t-att-style="(!caducado ? 'color: green' : 'color: red')">
+                            <i class="fa fa-user"></i>
+                        </span>
+
+
+                    <!-- Validacion Fecha - Texto color rojo caducado, verde ok -->
+                    <t t-if='caducado === false'>
+                    <span style="color: green; font-weight: bold;"
+                          class='detail client-address'>
+                        <t t-esc='partner.caducidad'/>
+                    </span>
+                        <br/>
+                        <input id="input_manipulador" t-att-value="partner.name.concat(' - ',partner.vat or '')"
+                               class="edit" placeholder="Maniuplador - NIF"/>
+                    </t>
+                    <t t-if='caducado === true'>
+                    <span style="color: red; font-weight: bold;"
+                          class='detail client-address'>
+                        <t t-esc='partner.caducidad'/></span>
+                        <br/>
+                        <input id="input_manipulador" t-att-value="partner.name.concat(' - ',partner.vat or '')"
+                               class="edit" placeholder="Maniuplador - NIF"/>
+
+                    </t>
+                </t>
+                <t t-if='!partner.caducidad'>
+                    <span class='detail client-address empty'>N/A</span>
+                    <br/>
+                    <input id="input_manipulador" class="edit" placeholder="Maniuplador - NIF"/>
+                </t>
+                <br/>
+            </div>
+
+        </t>
+    </t>
+
+</templates>

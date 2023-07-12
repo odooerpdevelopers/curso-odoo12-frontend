@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+<record id="res_partner_form_view" model="ir.ui.view">
+  <field name="name">Fitosanitario Form</field>
+  <field name="model">res.partner</field>
+  <field name="inherit_id" ref="base.view_partner_form"/>
+  <field name="arch" type="xml">
+    <xpath expr="//page[@name='sales_purchases']" position="inside">
+      <group name="fitosanitario" string="Fitosanitario">
+        <field name="carne"/>
+        <field name="caducidad"/>
+        <field name="nacimiento"/>
+      </group>
+    </xpath>
+    <xpath expr="//field[@name='barcode']" position="attributes">
+      <attribute name="string">Tarjeta de socio</attribute>
+    </xpath>
+  </field>
+</record>
+
+</data>
+</odoo>
+

@@ -1,0 +1,10 @@
+.project
+.pydevproject
+.pyc
+*.pyc
+/.pyc
+/*.pyc
+/.project
+/.pydevproject
+/__init__.pyc
+.settings/
